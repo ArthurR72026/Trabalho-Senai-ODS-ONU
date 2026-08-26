@@ -19,7 +19,6 @@ html {
 
 body {
     background: #141414;
-
     color: #ffffff;
 
     font-family:
@@ -40,7 +39,6 @@ body {
 ========================================================= */
 
 header {
-
     background:
         linear-gradient(
             135deg,
@@ -64,11 +62,8 @@ header {
 ========================================================= */
 
 .acoes-header {
-
     display: flex;
-
     align-items: center;
-
     justify-content: flex-end;
 
     gap: 10px;
@@ -86,7 +81,6 @@ header {
     display: inline-flex;
 
     align-items: center;
-
     justify-content: center;
 
     gap: 7px;
@@ -94,18 +88,22 @@ header {
     min-height: 45px;
 
     padding:
-        0 17px;
+        10px
+        18px;
 
     border:
-        1px solid
-        rgba(255, 215, 0, 0.35);
+        1px solid #ffc400;
 
-    border-radius: 50px;
+    border-radius: 10px;
 
     background:
-        rgba(255, 215, 0, 0.08);
+        linear-gradient(
+            135deg,
+            #ffc400,
+            #e6a900
+        );
 
-    color: #ffd700;
+    color: #111111;
 
     font-size: 0.95rem;
 
@@ -113,11 +111,14 @@ header {
 
     text-decoration: none;
 
+    cursor: pointer;
+
+    white-space: nowrap;
+
     transition:
         transform 0.25s ease,
-        background-color 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
 }
 
 
@@ -125,18 +126,57 @@ header {
 
     color: #111111;
 
-    background:
-        #ffd700;
-
-    border-color:
-        #ffd700;
-
     transform:
         translateY(-2px);
 
+    filter:
+        brightness(1.08);
+
     box-shadow:
         0 7px 20px
-        rgba(255, 215, 0, 0.25);
+        rgba(255, 196, 0, 0.30);
+}
+
+
+/* =========================================================
+   BOTÃO DE TEMA
+========================================================= */
+
+#btnTema {
+
+    flex-shrink: 0;
+
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 1.2rem;
+
+    border-radius: 50%;
+
+    border: none;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+#btnTema:hover {
+
+    transform:
+        rotate(15deg)
+        scale(1.08);
+
+    box-shadow:
+        0 0 15px
+        rgba(255, 255, 255, 0.3);
 }
 
 
@@ -183,46 +223,6 @@ header {
 
 
 /* =========================================================
-   BOTÃO DE TEMA
-========================================================= */
-
-#btnTema {
-
-    border-radius: 50%;
-
-    width: 45px;
-
-    height: 45px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 1.2rem;
-
-    border: none;
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-
-#btnTema:hover {
-
-    transform:
-        rotate(15deg)
-        scale(1.08);
-
-    box-shadow:
-        0 0 15px
-        rgba(255, 255, 255, 0.3);
-}
-
-
-/* =========================================================
    TÍTULOS DAS SEÇÕES
 ========================================================= */
 
@@ -253,7 +253,6 @@ header {
 ========================================================= */
 
 #listaProjetos {
-
     width: 100%;
 }
 
@@ -498,7 +497,6 @@ header {
     max-width: 750px;
 
     margin-left: auto;
-
     margin-right: auto;
 
     padding: 30px;
@@ -522,7 +520,6 @@ header {
 ========================================================= */
 
 .form-avaliacao {
-
     width: 100%;
 }
 
@@ -569,7 +566,6 @@ header {
 
 
 .form-avaliacao .form-control::placeholder {
-
     color: #888888;
 }
 
@@ -672,7 +668,6 @@ header {
 
 
 .footer-art7 p {
-
     margin-bottom: 5px;
 }
 
@@ -716,19 +711,16 @@ body.tema-claro .logo-art7 {
 
 
 body.tema-claro .descricao-header {
-
     color: #555555;
 }
 
 
 body.tema-claro .titulo-secao {
-
     color: #222222;
 }
 
 
 body.tema-claro .subtitulo-secao {
-
     color: #666666;
 }
 
@@ -748,19 +740,16 @@ body.tema-claro .card-projeto {
 
 
 body.tema-claro .imagem-projeto-container {
-
     background: #eeeeee;
 }
 
 
 body.tema-claro .titulo-projeto {
-
     color: #222222;
 }
 
 
 body.tema-claro .descricao-projeto {
-
     color: #555555;
 }
 
@@ -780,7 +769,6 @@ body.tema-claro .avaliacao-container {
 
 
 body.tema-claro .form-avaliacao .form-label {
-
     color: #222222;
 }
 
@@ -798,7 +786,6 @@ body.tema-claro .form-avaliacao .form-select {
 
 
 body.tema-claro .form-avaliacao .form-control::placeholder {
-
     color: #888888;
 }
 
@@ -825,7 +812,7 @@ body.tema-claro .footer-art7 {
 
 
 /* =========================================================
-   RESPONSIVIDADE
+   RESPONSIVIDADE - DESKTOP GRANDE
 ========================================================= */
 
 @media (min-width: 1200px) {
@@ -837,9 +824,12 @@ body.tema-claro .footer-art7 {
     .titulo-projeto {
         font-size: 1.4rem;
     }
-
 }
 
+
+/* =========================================================
+   RESPONSIVIDADE - TABLET GRANDE
+========================================================= */
 
 @media (max-width: 1199px) {
 
@@ -850,9 +840,12 @@ body.tema-claro .footer-art7 {
     .imagem-projeto-container {
         padding: 12px;
     }
-
 }
 
+
+/* =========================================================
+   RESPONSIVIDADE - TABLET
+========================================================= */
 
 @media (max-width: 991px) {
 
@@ -879,36 +872,75 @@ body.tema-claro .footer-art7 {
     .descricao-projeto {
         font-size: 0.93rem;
     }
-
 }
 
+
+/* =========================================================
+   RESPONSIVIDADE - CELULAR
+========================================================= */
 
 @media (max-width: 767px) {
 
     header .container {
+
         padding-left: 20px;
         padding-right: 20px;
     }
 
 
-    .acoes-header {
+    /* ============================================
+       ÁREA DOS BOTÕES DO TOPO
+    ============================================ */
 
-        justify-content: center;
+    header .container > .d-flex {
 
-        margin-bottom: 20px;
+        justify-content: center !important;
+
+        align-items: center !important;
+
+        flex-wrap: nowrap;
+
+        gap: 18px !important;
+
+        width: 100%;
     }
 
+
+    /* ============================================
+       BOTÃO AVALIAÇÕES
+    ============================================ */
 
     .btn-avaliacoes {
 
         min-height: 42px;
 
         padding:
-            0 14px;
+            9px
+            15px;
 
         font-size: 0.9rem;
+
+        flex-shrink: 0;
     }
 
+
+    /* ============================================
+       BOTÃO DE TEMA
+    ============================================ */
+
+    #btnTema {
+
+        width: 42px;
+
+        height: 42px;
+
+        flex-shrink: 0;
+    }
+
+
+    /* ============================================
+       LOGO
+    ============================================ */
 
     .logo-art7 {
 
@@ -926,14 +958,6 @@ body.tema-claro .footer-art7 {
     }
 
 
-    #btnTema {
-
-        width: 42px;
-
-        height: 42px;
-    }
-
-
     main.container {
 
         padding-left: 15px !important;
@@ -943,7 +967,6 @@ body.tema-claro .footer-art7 {
 
 
     .titulo-secao {
-
         font-size: 1.6rem;
     }
 
@@ -957,7 +980,6 @@ body.tema-claro .footer-art7 {
 
 
     .imagem-projeto-container {
-
         padding: 10px;
     }
 
@@ -975,13 +997,11 @@ body.tema-claro .footer-art7 {
 
 
     .card-projeto-body {
-
         padding: 16px;
     }
 
 
     .titulo-projeto {
-
         font-size: 1.15rem;
     }
 
@@ -1010,50 +1030,70 @@ body.tema-claro .footer-art7 {
 
         min-width: 0;
     }
-
 }
 
 
+/* =========================================================
+   RESPONSIVIDADE - CELULARES PEQUENOS
+========================================================= */
+
 @media (max-width: 480px) {
 
-    .logo-art7 {
+    header .container > .d-flex {
 
+        gap: 22px !important;
+    }
+
+
+    .btn-avaliacoes {
+
+        font-size: 0.85rem;
+
+        padding:
+            8px
+            13px;
+    }
+
+
+    #btnTema {
+
+        width: 42px;
+
+        height: 42px;
+    }
+
+
+    .logo-art7 {
         font-size: 1.7rem;
     }
 
 
     .descricao-header {
-
         font-size: 0.88rem;
     }
 
 
     .titulo-secao {
-
         font-size: 1.4rem;
     }
 
 
     .imagem-projeto-container {
-
         padding: 8px;
     }
 
 
     .card-projeto-body {
-
         padding: 14px;
     }
 
 
     .titulo-projeto {
-
         font-size: 1.1rem;
     }
 
 
     .descricao-projeto {
-
         font-size: 0.88rem;
     }
 
@@ -1073,53 +1113,72 @@ body.tema-claro .footer-art7 {
             11px
             12px;
     }
-
 }
 
 
+/* =========================================================
+   RESPONSIVIDADE - CELULARES MUITO PEQUENOS
+========================================================= */
+
 @media (max-width: 360px) {
 
-    .logo-art7 {
+    header .container > .d-flex {
 
+        gap: 16px !important;
+    }
+
+
+    .btn-avaliacoes {
+
+        font-size: 0.82rem;
+
+        padding:
+            8px
+            11px;
+    }
+
+
+    #btnTema {
+
+        width: 40px;
+
+        height: 40px;
+    }
+
+
+    .logo-art7 {
         font-size: 1.5rem;
     }
 
 
     .descricao-header {
-
         font-size: 0.82rem;
     }
 
 
     .titulo-secao {
-
         font-size: 1.3rem;
     }
 
 
     .imagem-projeto-container {
-
         padding: 6px;
     }
 
 
     .card-projeto-body {
-
         padding: 12px;
     }
 
 
     .titulo-projeto {
-
         font-size: 1rem;
     }
 
 
     .descricao-projeto {
-
         font-size: 0.84rem;
     }
-
 }
 
 
@@ -1128,7 +1187,6 @@ body.tema-claro .footer-art7 {
 ========================================================= */
 
 img {
-
     max-width: 100%;
 }
 
@@ -1140,7 +1198,6 @@ h3,
 h4,
 h5,
 h6 {
-
     overflow-wrap: anywhere;
 }
 
@@ -1154,7 +1211,6 @@ a,
 input,
 select,
 textarea {
-
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -1166,7 +1222,6 @@ textarea {
 @media (prefers-reduced-motion: reduce) {
 
     html {
-
         scroll-behavior: auto;
     }
 
@@ -1179,256 +1234,4 @@ textarea {
 
         animation: none !important;
     }
-
-}
-
-/* =========================================================
-   BOTÃO AVALIAÇÕES
-========================================================= */
-
-.btn-avaliacoes {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 6px;
-
-    min-height: 45px;
-
-    padding: 10px 18px;
-
-    border-radius: 10px;
-
-    background: #ffc400;
-
-    border: 1px solid #ffc400;
-
-    color: #111111;
-
-    font-weight: 700;
-
-    text-decoration: none;
-
-    transition:
-        transform 0.25s ease,
-        background-color 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-
-.btn-avaliacoes:hover {
-    background: #ffd633;
-
-    border-color: #ffd633;
-
-    color: #111111;
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 6px 18px
-        rgba(255, 196, 0, 0.30);
-}
-
-
-/* =========================================================
-   BOTÃO AVALIAÇÕES - TEMA CLARO
-========================================================= */
-
-body.tema-claro .btn-avaliacoes {
-    background: #b8860b;
-
-    border-color: #b8860b;
-
-    color: #ffffff;
-}
-
-
-body.tema-claro .btn-avaliacoes:hover {
-    background: #9f7308;
-
-    border-color: #9f7308;
-
-    color: #ffffff;
-}
-
-
-/* =========================================================
-   RESPONSIVO - BOTÕES DO HEADER
-========================================================= */
-
-@media (max-width: 767px) {
-
-    header .container > .d-flex {
-        justify-content: center !important;
-
-        flex-wrap: wrap;
-    }
-
-
-    .btn-avaliacoes {
-
-        min-height: 42px;
-
-        padding:
-            9px
-            15px;
-
-        font-size: 0.9rem;
-    }
-
-
-    #btnTema {
-
-        width: 42px;
-
-        height: 42px;
-    }
-
-}
-
-
-@media (max-width: 480px) {
-
-    .btn-avaliacoes {
-
-        font-size: 0.85rem;
-
-        padding:
-            8px
-            13px;
-    }
-
-}
-
-/* =========================================================
-   BOTÃO AVALIAÇÕES
-========================================================= */
-
-.btn-avaliacoes {
-
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 7px;
-
-    min-height: 45px;
-
-    padding:
-        10px
-        18px;
-
-    border:
-        1px solid #ffc400;
-
-    border-radius: 10px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ffc400,
-            #e6a900
-        );
-
-    color: #111111;
-
-    font-weight: 700;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        filter 0.25s ease;
-}
-
-
-.btn-avaliacoes:hover {
-
-    color: #111111;
-
-    transform:
-        translateY(-2px);
-
-    filter:
-        brightness(1.08);
-
-    box-shadow:
-        0 7px 20px
-        rgba(255, 196, 0, 0.30);
-}
-
-
-/* =========================================================
-   BOTÃO AVALIAÇÕES - TEMA CLARO
-========================================================= */
-
-body.tema-claro .btn-avaliacoes {
-
-    background:
-        linear-gradient(
-            135deg,
-            #b8860b,
-            #956f08
-        );
-
-    border-color:
-        #b8860b;
-
-    color:
-        #ffffff;
-}
-
-
-body.tema-claro .btn-avaliacoes:hover {
-
-    color:
-        #ffffff;
-}
-
-
-/* =========================================================
-   RESPONSIVO
-========================================================= */
-
-@media (max-width: 767px) {
-
-    header .container > .d-flex {
-
-        justify-content: center !important;
-
-        flex-wrap: wrap;
-    }
-
-
-    .btn-avaliacoes {
-
-        min-height: 42px;
-
-        padding:
-            9px
-            15px;
-
-        font-size:
-            0.9rem;
-    }
-
-}
-
-
-@media (max-width: 480px) {
-
-    .btn-avaliacoes {
-
-        font-size:
-            0.85rem;
-
-        padding:
-            8px
-            13px;
-    }
-
 }
