@@ -13,6 +13,15 @@
     <title>Avaliações | Catálogo de Projetos</title>
 
 
+    <!-- =====================================================
+         SWEETALERT2
+    ====================================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/sweetalert2@11"
+    ></script>
+
+
     <style>
 
         * {
@@ -1028,6 +1037,11 @@
 
     <header>
 
+        <!--
+            CORRIGIDO:
+            Ads.html -> index.html
+        -->
+
         <a
             href="index.html"
             class="btn-voltar"
@@ -1171,6 +1185,10 @@
     </main>
 
 
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
 
     <footer>
 
@@ -1350,7 +1368,9 @@
                 i++
             ) {
 
-                if (i <= Math.round(media)) {
+                if (
+                    i <= Math.round(media)
+                ) {
 
                     resultado +=
                         '<span class="cheia">★</span>';
@@ -1546,6 +1566,19 @@
 
 
         /* =====================================================
+           VOLTAR PARA O CATÁLOGO
+        ===================================================== */
+
+        function voltarCatalogo() {
+
+            window.location.href =
+                "index.html";
+
+        }
+
+
+
+        /* =====================================================
            VERIFICAR TOKEN
         ===================================================== */
 
@@ -1560,7 +1593,7 @@
             if (!token) {
 
                 window.location.href =
-                    "Ads.html";
+                    "index.html";
 
                 return false;
 
@@ -1616,7 +1649,7 @@
 
 
                     window.location.href =
-                        "Ads.html";
+                        "index.html";
 
 
                     return false;
@@ -1756,13 +1789,16 @@
                             "Sessão expirada",
 
                         text:
-                            "Entre novamente para acessar as avaliações."
+                            "Entre novamente para acessar as avaliações.",
+
+                        confirmButtonText:
+                            "OK"
 
                     });
 
 
                     window.location.href =
-                        "Ads.html";
+                        "index.html";
 
 
                     return;
@@ -1930,16 +1966,19 @@
 
 
         /* =====================================================
-           SWEETALERT
+           INICIAR
         ===================================================== */
 
+        document.addEventListener(
+            "DOMContentLoaded",
+            () => {
+
+                carregarAvaliacoes();
+
+            }
+        );
+
     </script>
-
-
-    <script
-        src="https://cdn.jsdelivr.net/npm/sweetalert2@11"
-        onload="carregarAvaliacoes()"
-    ></script>
 
 
 </body>
