@@ -1,0 +1,1947 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Avaliações | Catálogo de Projetos</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    #171717 0%,
+                    #0d0d0d 42%,
+                    #080808 100%
+                );
+
+            color: #ffffff;
+
+            min-height: 100vh;
+        }
+
+
+        header {
+
+            position: relative;
+
+            width: 100%;
+
+            padding:
+                36px
+                20px
+                45px;
+
+            text-align: center;
+
+            border-bottom:
+                1px solid
+                rgba(255, 255, 255, 0.08);
+
+            background:
+                rgba(8, 8, 8, 0.82);
+
+            backdrop-filter:
+                blur(12px);
+        }
+
+
+        header::after {
+
+            content: "";
+
+            position: absolute;
+
+            bottom: -1px;
+
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            width: 120px;
+
+            height: 2px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #ffc400,
+                    transparent
+                );
+        }
+
+
+        .btn-voltar {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            padding:
+                11px
+                20px;
+
+            margin-bottom: 30px;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.35);
+
+            border-radius: 10px;
+
+            background:
+                rgba(255, 255, 255, 0.03);
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition:
+                0.25s ease;
+        }
+
+
+        .btn-voltar:hover {
+
+            background:
+                #ffffff;
+
+            color:
+                #111111;
+
+            border-color:
+                #ffffff;
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 8px 25px
+                rgba(255, 255, 255, 0.10);
+        }
+
+
+        .titulo {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            font-size: 40px;
+
+            font-weight: 800;
+
+            letter-spacing: -1px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .estrela-titulo {
+
+            color:
+                #ffc400;
+
+            font-size: 44px;
+
+            filter:
+                drop-shadow(
+                    0 0 10px
+                    rgba(255, 196, 0, 0.22)
+                );
+        }
+
+
+        .subtitulo {
+
+            color:
+                #9b9b9b;
+
+            font-size: 15px;
+
+            line-height: 1.6;
+        }
+
+
+        main {
+
+            width: 100%;
+
+            max-width: 1000px;
+
+            margin:
+                0 auto;
+
+            padding:
+                42px
+                20px
+                80px;
+        }
+
+
+        .estatisticas {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 15px;
+
+            margin-bottom: 38px;
+        }
+
+
+        .estatistica {
+
+            position: relative;
+
+            min-height: 130px;
+
+            padding:
+                23px
+                22px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #191919,
+                    #121212
+                );
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.09);
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 15px 35px
+                rgba(0, 0, 0, 0.18);
+
+            transition:
+                0.25s ease;
+        }
+
+
+        .estatistica::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 2px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255, 196, 0, 0.7),
+                    transparent
+                );
+        }
+
+
+        .estatistica:hover {
+
+            transform:
+                translateY(-3px);
+
+            border-color:
+                rgba(255, 196, 0, 0.18);
+        }
+
+
+        .estatistica-label {
+
+            color:
+                #858585;
+
+            font-size: 11px;
+
+            letter-spacing: 1.2px;
+
+            text-transform:
+                uppercase;
+
+            margin-bottom: 12px;
+        }
+
+
+        .estatistica-valor {
+
+            color:
+                #ffffff;
+
+            font-size: 29px;
+
+            font-weight: 800;
+
+            margin-bottom: 8px;
+        }
+
+
+        .media-estrelas {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 2px;
+
+            font-size: 18px;
+        }
+
+
+        .media-estrelas .cheia {
+
+            color:
+                #ffc400;
+
+            text-shadow:
+                0 0 8px
+                rgba(255, 196, 0, 0.15);
+        }
+
+
+        .media-estrelas .vazia {
+
+            color:
+                #3b3b3b;
+        }
+
+
+        .lista-header {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .titulo-lista {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+
+        .titulo-lista h2 {
+
+            font-size: 24px;
+
+            font-weight: 750;
+        }
+
+
+        .contador {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-width: 25px;
+
+            height: 25px;
+
+            padding:
+                0
+                8px;
+
+            border-radius: 50px;
+
+            background:
+                rgba(255, 196, 0, 0.12);
+
+            color:
+                #ffc400;
+
+            font-size: 12px;
+
+            font-weight: 700;
+        }
+
+
+        .btn-atualizar {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 7px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            padding:
+                11px
+                18px;
+
+            background:
+                #2864e8;
+
+            color:
+                #ffffff;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition:
+                0.25s ease;
+
+            box-shadow:
+                0 6px 18px
+                rgba(40, 100, 232, 0.15);
+        }
+
+
+        .btn-atualizar:hover {
+
+            background:
+                #3675ff;
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 9px 25px
+                rgba(40, 100, 232, 0.25);
+        }
+
+
+        .btn-atualizar:disabled {
+
+            opacity:
+                0.6;
+
+            cursor:
+                wait;
+
+            transform:
+                none;
+
+            box-shadow:
+                none;
+        }
+
+
+        #listaAvaliacoes {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 15px;
+        }
+
+
+        .avaliacao-card {
+
+            position: relative;
+
+            padding:
+                22px
+                20px
+                21px
+                20px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #191919,
+                    #131313
+                );
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.09);
+
+            border-radius: 14px;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+
+            animation:
+                aparecer 0.4s ease both;
+        }
+
+
+        .avaliacao-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            top: 14px;
+
+            bottom: 14px;
+
+            width: 2px;
+
+            background:
+                #ffc400;
+
+            border-radius:
+                0 4px 4px 0;
+
+            opacity:
+                0.9;
+        }
+
+
+        .avaliacao-card:hover {
+
+            transform:
+                translateY(-3px);
+
+            border-color:
+                rgba(255, 196, 0, 0.18);
+
+            box-shadow:
+                0 15px 35px
+                rgba(0, 0, 0, 0.30);
+        }
+
+
+        @keyframes aparecer {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(10px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        .avaliacao-topo {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+
+        .usuario {
+
+            min-width: 0;
+        }
+
+
+        .nome {
+
+            color:
+                #ffffff;
+
+            font-size: 16px;
+
+            font-weight: 750;
+
+            margin-bottom: 6px;
+
+            word-break:
+                break-word;
+        }
+
+
+        .data {
+
+            color:
+                #777777;
+
+            font-size: 11px;
+        }
+
+
+        .nota-container {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            flex-shrink: 0;
+        }
+
+
+        .nota-numero {
+
+            color:
+                #ffc400;
+
+            font-size: 13px;
+
+            font-weight: 700;
+        }
+
+
+        .estrelas {
+
+            display: flex;
+
+            gap: 1px;
+
+            white-space: nowrap;
+
+            font-size: 17px;
+
+            letter-spacing: 1px;
+        }
+
+
+        .estrela-cheia {
+
+            color:
+                #ffc400;
+
+            text-shadow:
+                0 0 7px
+                rgba(255, 196, 0, 0.13);
+        }
+
+
+        .estrela-vazia {
+
+            color:
+                #383838;
+        }
+
+
+        .linha {
+
+            width: 100%;
+
+            height: 1px;
+
+            margin:
+                15px
+                0;
+
+            background:
+                rgba(255, 255, 255, 0.06);
+        }
+
+
+        .texto-avaliacao {
+
+            color:
+                #cfcfcf;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            white-space:
+                pre-wrap;
+
+            word-break:
+                break-word;
+        }
+
+
+        .carregando {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            min-height: 150px;
+
+            padding: 35px;
+
+            color:
+                #888888;
+
+            font-size: 14px;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.07);
+
+            border-radius: 14px;
+
+            background:
+                rgba(255, 255, 255, 0.015);
+        }
+
+
+        .spinner {
+
+            width: 20px;
+
+            height: 20px;
+
+            border:
+                3px solid
+                rgba(255, 255, 255, 0.12);
+
+            border-top-color:
+                #ffc400;
+
+            border-radius: 50%;
+
+            animation:
+                girar 0.8s linear infinite;
+        }
+
+
+        @keyframes girar {
+
+            to {
+
+                transform:
+                    rotate(360deg);
+            }
+        }
+
+
+        .mensagem {
+
+            text-align: center;
+
+            padding:
+                60px
+                20px;
+
+            border:
+                1px dashed
+                rgba(255, 255, 255, 0.13);
+
+            border-radius: 14px;
+
+            background:
+                rgba(255, 255, 255, 0.015);
+
+            color:
+                #858585;
+        }
+
+
+        .mensagem .icone {
+
+            font-size: 38px;
+
+            margin-bottom: 14px;
+        }
+
+
+        .mensagem h3 {
+
+            color:
+                #ffffff;
+
+            font-size: 19px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .mensagem p {
+
+            font-size: 13px;
+
+            line-height: 1.6;
+        }
+
+
+        .erro {
+
+            padding:
+                25px
+                20px;
+
+            border:
+                1px solid
+                rgba(255, 70, 70, 0.25);
+
+            border-radius: 14px;
+
+            background:
+                rgba(255, 50, 50, 0.045);
+
+            text-align: center;
+
+            color:
+                #ff7777;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+
+        footer {
+
+            border-top:
+                1px solid
+                rgba(255, 255, 255, 0.07);
+
+            padding:
+                25px
+                20px;
+
+            text-align: center;
+
+            color:
+                #555555;
+
+            font-size: 12px;
+        }
+
+
+        @media (max-width: 700px) {
+
+            header {
+
+                padding:
+                    30px
+                    15px
+                    38px;
+            }
+
+
+            .titulo {
+
+                font-size: 32px;
+            }
+
+
+            .estrela-titulo {
+
+                font-size: 35px;
+            }
+
+
+            .subtitulo {
+
+                font-size: 13px;
+            }
+
+
+            main {
+
+                padding:
+                    30px
+                    14px
+                    60px;
+            }
+
+
+            .estatisticas {
+
+                grid-template-columns:
+                    1fr;
+
+                gap: 12px;
+
+                margin-bottom: 30px;
+            }
+
+
+            .estatistica {
+
+                min-height: 110px;
+            }
+
+
+            .lista-header {
+
+                align-items: stretch;
+
+                flex-direction: column;
+
+                gap: 14px;
+            }
+
+
+            .titulo-lista {
+
+                justify-content:
+                    flex-start;
+            }
+
+
+            .titulo-lista h2 {
+
+                font-size: 21px;
+            }
+
+
+            .btn-atualizar {
+
+                width: 100%;
+            }
+
+
+            .avaliacao-topo {
+
+                flex-direction: column;
+
+                gap: 12px;
+            }
+
+
+            .nota-container {
+
+                width: 100%;
+
+                justify-content:
+                    flex-start;
+            }
+
+
+            .avaliacao-card {
+
+                padding:
+                    20px
+                    17px
+                    20px;
+            }
+
+        }
+
+
+        @media (max-width: 400px) {
+
+            .titulo {
+
+                font-size: 28px;
+
+                gap: 8px;
+            }
+
+
+            .estrela-titulo {
+
+                font-size: 30px;
+            }
+
+
+            .titulo-lista h2 {
+
+                font-size: 19px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         CABEÇALHO
+    ====================================================== -->
+
+    <header>
+
+        <a
+            href="Ads.html"
+            class="btn-voltar"
+        >
+
+            ← Voltar ao catálogo
+
+        </a>
+
+
+        <h1 class="titulo">
+
+            <span class="estrela-titulo">
+                ★
+            </span>
+
+            Avaliações
+
+        </h1>
+
+
+        <p class="subtitulo">
+
+            Área exclusiva para desenvolvedores.
+
+        </p>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CONTEÚDO
+    ====================================================== -->
+
+    <main>
+
+
+        <section
+            class="estatisticas"
+            aria-label="Resumo das avaliações"
+        >
+
+
+            <div class="estatistica">
+
+                <div class="estatistica-label">
+                    Total de avaliações
+                </div>
+
+
+                <div
+                    class="estatistica-valor"
+                    id="totalAvaliacoes"
+                >
+                    —
+                </div>
+
+            </div>
+
+
+
+            <div class="estatistica">
+
+                <div class="estatistica-label">
+                    Média das avaliações
+                </div>
+
+
+                <div
+                    class="estatistica-valor"
+                    id="mediaAvaliacoes"
+                >
+                    —
+                </div>
+
+
+                <div
+                    class="media-estrelas"
+                    id="mediaEstrelas"
+                    aria-label="Média das avaliações"
+                >
+                    ★★★★★
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <div class="lista-header">
+
+
+            <div class="titulo-lista">
+
+                <h2>
+                    Avaliações dos visitantes
+                </h2>
+
+
+                <span
+                    class="contador"
+                    id="contadorAvaliacoes"
+                >
+                    0
+                </span>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="btn-atualizar"
+                id="btnAtualizar"
+            >
+                🔄 Atualizar
+            </button>
+
+
+        </div>
+
+
+
+        <div id="listaAvaliacoes">
+
+            <div class="carregando">
+
+                <div class="spinner"></div>
+
+                <span>
+                    Verificando acesso...
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </main>
+
+
+
+    <footer>
+
+        Catálogo de Projetos
+        •
+        Sistema de Avaliações
+
+    </footer>
+
+
+
+    <script>
+
+        /* =====================================================
+           CONFIGURAÇÃO
+        ===================================================== */
+
+        const API_URL =
+            "https://catalogo-avaliacoes-api.avaliacoestrabalhosenai.workers.dev/";
+
+
+        /* =====================================================
+           ELEMENTOS
+        ===================================================== */
+
+        const lista =
+            document.getElementById(
+                "listaAvaliacoes"
+            );
+
+
+        const btnAtualizar =
+            document.getElementById(
+                "btnAtualizar"
+            );
+
+
+        const totalAvaliacoes =
+            document.getElementById(
+                "totalAvaliacoes"
+            );
+
+
+        const mediaAvaliacoes =
+            document.getElementById(
+                "mediaAvaliacoes"
+            );
+
+
+        const mediaEstrelas =
+            document.getElementById(
+                "mediaEstrelas"
+            );
+
+
+        const contadorAvaliacoes =
+            document.getElementById(
+                "contadorAvaliacoes"
+            );
+
+
+
+        /* =====================================================
+           ESCAPAR HTML
+        ===================================================== */
+
+        function escaparHTML(texto) {
+
+            const div =
+                document.createElement(
+                    "div"
+                );
+
+
+            div.textContent =
+                texto ?? "";
+
+
+            return div.innerHTML;
+
+        }
+
+
+
+        /* =====================================================
+           FORMATAR DATA
+        ===================================================== */
+
+        function formatarData(data) {
+
+            if (!data) {
+
+                return "";
+
+            }
+
+
+            const dataObj =
+                new Date(
+                    data.replace(
+                        " ",
+                        "T"
+                    )
+                );
+
+
+            if (
+                Number.isNaN(
+                    dataObj.getTime()
+                )
+            ) {
+
+                return data;
+
+            }
+
+
+            return dataObj.toLocaleString(
+                "pt-BR",
+                {
+                    day: "2-digit",
+                    month: "2-digit",
+                    year: "numeric",
+                    hour: "2-digit",
+                    minute: "2-digit"
+                }
+            );
+
+        }
+
+
+
+        /* =====================================================
+           ESTRELAS
+        ===================================================== */
+
+        function gerarEstrelas(nota) {
+
+            let resultado = "";
+
+
+            for (
+                let i = 1;
+                i <= 5;
+                i++
+            ) {
+
+                if (i <= nota) {
+
+                    resultado +=
+                        '<span class="estrela-cheia">★</span>';
+
+                } else {
+
+                    resultado +=
+                        '<span class="estrela-vazia">★</span>';
+
+                }
+
+            }
+
+
+            return resultado;
+
+        }
+
+
+
+        function gerarEstrelasMedia(media) {
+
+            let resultado = "";
+
+
+            for (
+                let i = 1;
+                i <= 5;
+                i++
+            ) {
+
+                if (i <= Math.round(media)) {
+
+                    resultado +=
+                        '<span class="cheia">★</span>';
+
+                } else {
+
+                    resultado +=
+                        '<span class="vazia">★</span>';
+
+                }
+
+            }
+
+
+            return resultado;
+
+        }
+
+
+
+        /* =====================================================
+           CRIAR CARD
+        ===================================================== */
+
+        function criarCard(avaliacao) {
+
+            const card =
+                document.createElement(
+                    "article"
+                );
+
+
+            card.className =
+                "avaliacao-card";
+
+
+            const nome =
+                escaparHTML(
+                    avaliacao.nome
+                );
+
+
+            const texto =
+                escaparHTML(
+                    avaliacao.avaliacao
+                );
+
+
+            const nota =
+                Number(
+                    avaliacao.nota
+                );
+
+
+            const data =
+                formatarData(
+                    avaliacao.data
+                );
+
+
+            card.innerHTML = `
+
+                <div class="avaliacao-topo">
+
+                    <div class="usuario">
+
+                        <div class="nome">
+                            ${nome}
+                        </div>
+
+                        <div class="data">
+                            ${data}
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="nota-container"
+                        aria-label="${nota} de 5 estrelas"
+                    >
+
+                        <span class="nota-numero">
+                            ${nota}/5
+                        </span>
+
+                        <div class="estrelas">
+
+                            ${gerarEstrelas(nota)}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="linha"></div>
+
+
+                <div class="texto-avaliacao">
+
+                    ${texto}
+
+                </div>
+
+            `;
+
+
+            return card;
+
+        }
+
+
+
+        /* =====================================================
+           ESTATÍSTICAS
+        ===================================================== */
+
+        function atualizarEstatisticas(
+            avaliacoes
+        ) {
+
+            const quantidade =
+                avaliacoes.length;
+
+
+            contadorAvaliacoes.textContent =
+                quantidade;
+
+
+            totalAvaliacoes.textContent =
+                quantidade;
+
+
+            if (quantidade === 0) {
+
+                mediaAvaliacoes.textContent =
+                    "—";
+
+
+                mediaEstrelas.innerHTML =
+                    `
+                    <span class="vazia">
+                        ★★★★★
+                    </span>
+                    `;
+
+                return;
+
+            }
+
+
+            let soma = 0;
+
+
+            avaliacoes.forEach(
+                avaliacao => {
+
+                    const nota =
+                        Number(
+                            avaliacao.nota
+                        );
+
+
+                    if (
+                        Number.isFinite(nota)
+                    ) {
+
+                        soma += nota;
+
+                    }
+
+                }
+            );
+
+
+            const media =
+                soma / quantidade;
+
+
+            mediaAvaliacoes.textContent =
+                media.toFixed(1);
+
+
+            mediaEstrelas.innerHTML =
+                gerarEstrelasMedia(
+                    media
+                );
+
+        }
+
+
+
+        /* =====================================================
+           VERIFICAR TOKEN
+        ===================================================== */
+
+        async function verificarAcesso() {
+
+            const token =
+                sessionStorage.getItem(
+                    "tokenAvaliacoes"
+                );
+
+
+            if (!token) {
+
+                window.location.href =
+                    "Ads.html";
+
+                return false;
+
+            }
+
+
+            try {
+
+                const resposta =
+                    await fetch(
+                        API_URL,
+                        {
+
+                            method:
+                                "GET",
+
+                            headers: {
+
+                                "Authorization":
+                                    "Bearer " + token
+
+                            }
+
+                        }
+                    );
+
+
+                if (
+                    resposta.status ===
+                    401
+                ) {
+
+                    sessionStorage.removeItem(
+                        "tokenAvaliacoes"
+                    );
+
+
+                    await Swal.fire({
+
+                        icon:
+                            "warning",
+
+                        title:
+                            "Acesso expirado",
+
+                        text:
+                            "Sua autorização expirou. Faça o login novamente.",
+
+                        confirmButtonText:
+                            "OK"
+
+                    });
+
+
+                    window.location.href =
+                        "Ads.html";
+
+
+                    return false;
+
+                }
+
+
+                if (!resposta.ok) {
+
+                    throw new Error(
+                        "Não foi possível verificar o acesso."
+                    );
+
+                }
+
+
+                return true;
+
+
+            } catch (erro) {
+
+                console.error(
+                    erro
+                );
+
+
+                lista.innerHTML = `
+
+                    <div class="erro">
+
+                        ❌
+
+                        <strong>
+                            Não foi possível verificar o acesso.
+                        </strong>
+
+                        <br><br>
+
+                        Tente voltar ao catálogo e entrar novamente.
+
+                    </div>
+
+                `;
+
+
+                return false;
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           CARREGAR AVALIAÇÕES
+        ===================================================== */
+
+        async function carregarAvaliacoes() {
+
+            const autorizado =
+                await verificarAcesso();
+
+
+            if (!autorizado) {
+
+                return;
+
+            }
+
+
+            const token =
+                sessionStorage.getItem(
+                    "tokenAvaliacoes"
+                );
+
+
+            btnAtualizar.disabled =
+                true;
+
+
+            btnAtualizar.textContent =
+                "⏳ Carregando...";
+
+
+            lista.innerHTML = `
+
+                <div class="carregando">
+
+                    <div class="spinner"></div>
+
+                    <span>
+                        Carregando avaliações...
+                    </span>
+
+                </div>
+
+            `;
+
+
+            try {
+
+                const resposta =
+                    await fetch(
+                        API_URL,
+                        {
+
+                            method:
+                                "GET",
+
+                            headers: {
+
+                                "Authorization":
+                                    "Bearer " + token
+
+                            }
+
+                        }
+                    );
+
+
+                if (
+                    resposta.status ===
+                    401
+                ) {
+
+                    sessionStorage.removeItem(
+                        "tokenAvaliacoes"
+                    );
+
+
+                    await Swal.fire({
+
+                        icon:
+                            "warning",
+
+                        title:
+                            "Sessão expirada",
+
+                        text:
+                            "Entre novamente para acessar as avaliações."
+
+                    });
+
+
+                    window.location.href =
+                        "Ads.html";
+
+
+                    return;
+
+                }
+
+
+                if (!resposta.ok) {
+
+                    throw new Error(
+                        "Erro HTTP " +
+                        resposta.status
+                    );
+
+                }
+
+
+                const dados =
+                    await resposta.json();
+
+
+                if (
+                    !dados.sucesso
+                ) {
+
+                    throw new Error(
+                        dados.mensagem ||
+                        "Não foi possível carregar as avaliações."
+                    );
+
+                }
+
+
+                const avaliacoes =
+                    Array.isArray(
+                        dados.avaliacoes
+                    )
+                        ? dados.avaliacoes
+                        : [];
+
+
+                atualizarEstatisticas(
+                    avaliacoes
+                );
+
+
+                lista.innerHTML =
+                    "";
+
+
+                if (
+                    avaliacoes.length === 0
+                ) {
+
+                    lista.innerHTML = `
+
+                        <div class="mensagem">
+
+                            <div class="icone">
+                                ⭐
+                            </div>
+
+                            <h3>
+                                Ainda não há avaliações
+                            </h3>
+
+                            <p>
+                                Ainda não existem avaliações registradas.
+                            </p>
+
+                        </div>
+
+                    `;
+
+
+                    return;
+
+                }
+
+
+                avaliacoes.forEach(
+                    (avaliacao, indice) => {
+
+                        const card =
+                            criarCard(
+                                avaliacao
+                            );
+
+
+                        card.style.animationDelay =
+                            `${indice * 0.05}s`;
+
+
+                        lista.appendChild(
+                            card
+                        );
+
+                    }
+                );
+
+
+            } catch (erro) {
+
+                console.error(
+                    "Erro ao carregar avaliações:",
+                    erro
+                );
+
+
+                totalAvaliacoes.textContent =
+                    "—";
+
+
+                mediaAvaliacoes.textContent =
+                    "—";
+
+
+                contadorAvaliacoes.textContent =
+                    "0";
+
+
+                lista.innerHTML = `
+
+                    <div class="erro">
+
+                        ❌
+
+                        <strong>
+                            Não foi possível carregar as avaliações.
+                        </strong>
+
+                        <br><br>
+
+                        Verifique sua conexão ou tente novamente.
+
+                    </div>
+
+                `;
+
+
+            } finally {
+
+                btnAtualizar.disabled =
+                    false;
+
+
+                btnAtualizar.textContent =
+                    "🔄 Atualizar";
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           BOTÃO ATUALIZAR
+        ===================================================== */
+
+        btnAtualizar.addEventListener(
+            "click",
+            carregarAvaliacoes
+        );
+
+
+
+        /* =====================================================
+           SWEETALERT
+        ===================================================== */
+
+    </script>
+
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/sweetalert2@11"
+        onload="carregarAvaliacoes()"
+    ></script>
+
+
+</body>
+
+</html>
